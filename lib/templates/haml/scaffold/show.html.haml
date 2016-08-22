@@ -1,0 +1,29 @@
+- content_for :title do
+  = t('.page_title', id: @<%= singular_name %>.id, default: t('helpers.show.page_title', id: @<%= singular_name %>.id).humanize)
+
+%ol.breadcrumb
+  %li= link_to t('<%= plural_name %>.breadcrumb.index', default: t('helpers.breadcrumb.index')), <%= plural_name %>_path
+  %li.active= t('.h1_title', id: @<%= singular_name %>.id, default: t('helpers.show.h1_title', id: @<%= singular_name %>.id))
+
+.page-header.w-lead
+  %p.lead= t('.h1_title_lead', default: t('helpers.show.h1_title_lead').humanize)
+  %p.pull-right
+    = link_to_edit(@<%= singular_name %>, edit_<%= singular_name %>_path(@<%= singular_name %>), button: :norm, glyphicon: "edit")
+    = link_to_destroy(@<%= singular_name %>, <%= singular_name %>_path(@<%= singular_name %>), button: :norm, glyphicon: "remove-sign")
+  %h1= t('.h1_title', id: @<%= singular_name %>.id, default: t('helpers.show.h1_title', id: @<%= singular_name %>.id))
+
+.row.record-detail
+  .col-md-9
+    .record-fields
+      %dl.dl-horizontal
+<% attributes.reject(&:password_digest?).each do |attribute| -%>      
+        %dt= t('.<%= attribute.name %>', default: t("<%= plural_name %>.attributes.<%= attribute.name %>"))
+        %dd= @<%= singular_name %>.<%= attribute.name %>
+<% end -%>
+
+      %dl.dl-horizontal.buttons
+        %td
+        %dd= link_to_index <%= class_name %>, <%= index_helper %>_path, button: :norm
+
+  .col-md-3
+    = render partial: "layouts/record_stamps", locals: { o: @<%= singular_name %> }

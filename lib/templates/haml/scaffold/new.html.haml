@@ -1,0 +1,11 @@
+- content_for :title do
+  = t('.page_title', default: t('helpers.new.page_title').humanize)
+
+%ol.breadcrumb
+  %li= link_to t('<%= plural_name %>.breadcrumb.index', default: t('helpers.breadcrumb.index')), <%= plural_name %>_path
+  %li.active= t('<%= plural_name %>.breadcrumb.new.title', default: t('helpers.breadcrumb.new'))
+
+.page-header
+  %h1= t('.h1_title', default: t('helpers.new.h1_title').humanize)
+  
+= render partial: "form", locals: { on_edit: false }

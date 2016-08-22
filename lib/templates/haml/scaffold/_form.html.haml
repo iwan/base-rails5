@@ -1,0 +1,38 @@
+<%# https://github.com/rails/rails/blob/master/railties/lib/rails/generators/erb/scaffold/templates/_form.html.erb %>
+
+= form_for @<%= singular_name %>, html: {class: 'form-horizontal', role: 'form'} do |f|
+  = error_notification(@<%= singular_name %>) if @<%= singular_name %>.errors.any?
+
+<% attributes.each do |attribute| -%>
+
+  <% if attribute.field_type.to_s=="date_select" -%>
+.form-group
+    = f.label :<%= attribute.column_name %>, t('.<%= attribute.column_name %>', default: t("<%= plural_name %>.attributes.<%= attribute.name %>")), class: 'col-sm-3 control-label'
+    .col-sm-2
+      .input-group.date
+        = f.text_field :<%= attribute.column_name %>, class: 'form-control datepicker'
+        %span.input-group-addon
+          %i.glyphicon.glyphicon-th
+
+  <% elsif attribute.field_type.to_s=="check_box" -%>
+  .form-group
+    .col-sm-offset-3.col-sm-6
+      .checkbox
+        %label
+          = f.check_box :<%= attribute.column_name %>
+          = t('.<%= attribute.column_name %>', default: t("<%= plural_name %>.attributes.<%= attribute.name %>"))
+
+  <% else -%>
+
+  .form-group
+    = f.label :<%= attribute.column_name %>, t('.<%= attribute.column_name %>', default: t("<%= plural_name %>.attributes.<%= attribute.name %>")), class: 'col-sm-3 control-label'
+    .col-sm-6
+      = f.<%= attribute.field_type %> :<%= attribute.column_name %>, class: 'form-control' #, placeholder: '<%= singular_name %> <%= attribute.name %>', required: true
+  <% end -%>
+      
+<% end -%>     
+
+  .form-group
+    .col-sm-offset-3.col-sm-9
+      = f.submit nil, class: 'btn btn-primary'
+      = link_to_back button: :norm, label: t(".cancel", default: t("helpers.form.cancel"))

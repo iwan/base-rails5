@@ -1,4 +1,9 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
 @import "theme";
+@import "sancho";
+@import "base_rails5";
+
+@import "bootstrap-datepicker3";

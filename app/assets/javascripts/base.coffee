@@ -2,7 +2,8 @@ BaseRails5 =
   requred_field_sign: "*"
 
 
-$ ->
+
+ready = ->
   $(".dropdown-toggle").dropdown()
 
   $("[data-toggle=tooltip]").tooltip()
@@ -31,3 +32,11 @@ $ ->
 
   $("select[required='required']").each ->
     add_sign_for_required_field(this)
+
+
+  $("#sign_in_navbar_button").click ->
+    Turbolinks.visit($(this).data('href'))
+
+
+
+$(document).on('turbolinks:load', ready)

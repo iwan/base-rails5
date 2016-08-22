@@ -1,0 +1,152 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed);
+
+body {
+  background: image-url('grey_wash_wall_@2X.png') gray;
+}
+
+footer {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 16px;
+  color: #aaa;
+
+  span.ez {
+    color: red;
+  }
+}
+
+/* change default sizing of label-value of show view (default is 160-180) */
+.dl-horizontal dt {
+  width: 200px;
+}
+.dl-horizontal dd {
+  margin-left: 220px;
+}
+
+span.currency {
+  color: #bbb;
+}
+span.faded {
+  color: #ddd;
+
+  span.currency {
+    color: #ddd;
+  }
+}
+
+div.tbl_found {
+  color: #333;
+  text-align: right;
+  padding-bottom: 10px;
+}
+
+div.right {
+  text-align: right;
+}
+.left {
+  text-align: left;
+}
+
+a#filter_toggler {
+  color: white;
+}
+span.float-right {
+  float: right;
+}
+
+.grey {
+  color: #aaa;
+}
+
+.rate-percentage {
+  color: #839fc2;
+}
+
+div.table-caption p {
+  color: #aaa;
+}
+
+input.xxxaxx {
+  text-align: right;
+}
+
+.right-align {
+  text-align: right;
+}
+
+
+
+@mixin inner-block {
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.record-detail {
+  .block-container {
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    
+    .block-header {
+      @include inner-block;
+      padding: 5px 15px;
+      background-color: #eee;
+      color: #444;
+      font-weight: bold; 
+      border-bottom: 1px solid #ccc;
+    }
+
+    .block-item {
+      @include inner-block;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 10px;
+
+      dt {
+        color: #aaa;
+      }
+      dd {
+        margin-bottom: 8px;
+      }
+
+      > table {
+        td.file-icon {
+          align: left;
+          vertical-align: top;
+
+          > div.destroy-button {
+            margin-top: 12px;
+            margin-left: 6px;
+          }
+        }
+        td.descr {
+          padding-left: 5px;
+          font-size: 0.85em;
+          > .name {
+            margin-bottom: 4px;
+          }
+          > .size {
+            color: #bbb;
+            margin-bottom: 8px;
+          }
+          > .uploaded {
+            margin-bottom: 4px;
+          }
+
+        }
+      }
+    }
+
+    .block-footer {
+      padding: 10px 15px;
+    }
+
+  }
+
+
+
+}
+
+div.record-stamps.soon-abandoned {
+  background-color: rgb(255, 219, 130);
+}

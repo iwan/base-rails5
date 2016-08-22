@@ -1,0 +1,42 @@
+- content_for :title do
+  = t('.page_title', default: t('helpers.index.page_title'))
+
+%ol.breadcrumb
+  %li.active= t('users.breadcrumb.index', default: t('helpers.breadcrumb.index'))
+
+
+.page-header
+  %p.pull-right
+    = link_to_new(User, new_user_path, button: :norm, label: t(".new", default: t('helpers.new_record')), glyphicon: "plus-sign")
+  %h1= t('.h1_title', default: t('helpers.index.h1_title'))
+
+- if @users.empty?
+  .alert.alert-info= t(".no_user", default: t("helpers.index.empty_selection"))
+- else
+  %table.table.table-bordered.table-condensed
+    %thead
+      %tr
+        %th= t '.first_name', default: t("users.attributes.first_name")
+        %th= t '.last_name', default: t("users.attributes.last_name")
+        %th= t '.email', default: t("users.attributes.email")
+        %th= t '.notes', default: t("users.attributes.notes")
+        %th.right=t '.actions', default: t("helpers.actions")
+
+    %tbody
+    - @users.each do |user|
+      %tr
+  
+        %td= link_to user.first_name, user
+            
+        %td= user.last_name
+            
+        %td= user.email
+            
+        %td= user.notes
+            
+        
+        %td.right
+          = link_to_show(user, user_path(user))
+          = link_to_edit(user, edit_user_path(user))
+          = link_to_destroy(user, user_path(user))
+

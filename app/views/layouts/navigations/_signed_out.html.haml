@@ -1,0 +1,5 @@
+%ul.nav.navbar-nav.navbar-right
+  = render "layouts/navigations/locale_switch"
+  %li
+    %button.btn.btn-primary.navbar-btn#sign_in_navbar_button(data-href=new_account_session_path)= t('.sign_in')
+

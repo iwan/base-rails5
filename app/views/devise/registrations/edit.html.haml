@@ -1,0 +1,51 @@
+/ http://localhost:3000/accounts/edit
+/ The user can change his password
+
+- content_for :title do
+  = t('.change_password')
+
+%ol.breadcrumb
+  %li= link_to t('users.show.index'), users_path
+  %li.active= current_user.full_name
+
+.page-header
+  %h1=t '.change_password'
+
+
+= form_for(resource, :as => resource_name, :url => account_registration_path, :html => {:method => :patch, :class => 'form-horizontal', :role => 'form'}) do |f|
+  = error_notification(resource) if resource.errors.any?
+
+  .form-group
+    %label(class='col-sm-3 control-label')= t('.user_name')
+    .col-sm-6
+      %p.form-control-static= resource.user.full_name
+
+  - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+    %p
+      Currently waiting confirmation for: #{resource.unconfirmed_email}
+
+  .form-group
+    = f.label :current_password, class: 'col-sm-3 control-label'
+    .col-sm-6
+      = f.password_field :current_password, class: 'form-control', hint: "we need your current password to confirm your changes" 
+
+  .form-group
+    = f.label :new_password, class: 'col-sm-3 control-label'
+    .col-sm-6
+      = f.password_field :password, class: 'form-control', required: false, autocomplete: "off", hint: "leave it blank if you don't want to change it"
+
+  .form-group
+    = f.label :new_password_confirmation, class: 'col-sm-3 control-label'
+    .col-sm-6
+      = f.password_field :password_confirmation, class: 'form-control'
+
+
+
+  .form-group
+    .col-sm-offset-3.col-sm-9
+      = f.submit t('.update'), class: 'btn btn-primary'
+      = link_to t("users.edit.cancel"), current_user, class: 'btn btn-default'
+
+
+/ = render :partial => "cancel_account"
+

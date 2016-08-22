@@ -1,0 +1,37 @@
+- content_for :title do
+  = t('.page_title', default: t('helpers.show.page_title', id: @user.id).humanize)
+
+%ol.breadcrumb
+  %li= link_to t('users.breadcrumb.index', default: t('helpers.breadcrumb.index')), users_path
+  %li.active= t('.h1_title', id: @user.id, default: t('helpers.show.h1_title', id: @user.id))
+
+.page-header.w-lead
+  %p.lead= t('.h1_title_lead', default: t('helpers.show.h1_title_lead').humanize)
+  %p.pull-right
+    = link_to_edit(@user, edit_user_path(@user), button: :norm, glyphicon: "edit")
+    = link_to_destroy(@user, user_path(@user), button: :norm, glyphicon: "remove-sign")
+  %h1= t('.h1_title', id: @user.id, default: t('helpers.show.h1_title', id: @user.id))
+
+.row.record-detail
+  .col-md-9
+    .record-fields
+      %dl.dl-horizontal
+      
+        %dt= t('.first_name', default: t("users.attributes.first_name"))
+        %dd= @user.first_name
+      
+        %dt= t('.last_name', default: t("users.attributes.last_name"))
+        %dd= @user.last_name
+      
+        %dt= t('.email', default: t("users.attributes.email"))
+        %dd= @user.email
+      
+        %dt= t('.notes', default: t("users.attributes.notes"))
+        %dd= @user.notes
+
+      %dl.dl-horizontal.buttons
+        %td
+        %dd= link_to_index User, users_path, button: :norm
+
+  .col-md-3
+    = render partial: "layouts/record_stamps", locals: { o: @user }

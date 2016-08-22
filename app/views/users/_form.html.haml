@@ -1,0 +1,39 @@
+
+
+= form_for @user, html: {class: 'form-horizontal', role: 'form'} do |f|
+  = error_notification(@user) if @user.errors.any?
+
+
+  
+  .form-group
+    = f.label :first_name, t('.first_name', default: t("users.attributes.first_name")), class: 'col-sm-3 control-label'
+    .col-sm-6
+      = f.text_field :first_name, class: 'form-control' #, placeholder: 'user first_name', required: true
+        
+
+  
+  .form-group
+    = f.label :last_name, t('.last_name', default: t("users.attributes.last_name")), class: 'col-sm-3 control-label'
+    .col-sm-6
+      = f.text_field :last_name, class: 'form-control' #, placeholder: 'user last_name', required: true
+        
+
+  
+  .form-group
+    = f.label :email, t('.email', default: t("users.attributes.email")), class: 'col-sm-3 control-label'
+    .col-sm-6
+      = f.text_field :email, class: 'form-control' #, placeholder: 'user email', required: true
+        
+
+  
+  .form-group
+    = f.label :notes, t('.notes', default: t("users.attributes.notes")), class: 'col-sm-3 control-label'
+    .col-sm-6
+      = f.text_area :notes, class: 'form-control' #, placeholder: 'user notes', required: true
+        
+     
+
+  .form-group
+    .col-sm-offset-3.col-sm-9
+      = f.submit nil, class: 'btn btn-primary'
+      = link_to_back button: :norm, label: t(".cancel", default: t("helpers.form.cancel"))

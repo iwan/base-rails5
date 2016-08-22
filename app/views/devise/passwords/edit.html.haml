@@ -1,0 +1,30 @@
+- content_for :title do
+  = t('.title')
+
+.page-header
+  %h1=t '.reset_your_pwd'
+
+= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => {:class => 'form-horizontal', :role => 'form',  :method => :put }) do |f|
+  = error_notification(resource) if resource.errors.any?
+  = f.hidden_field :reset_password_token
+  / = f.hidden_field :email, resource.email
+  / = f.full_error :reset_password_token
+
+  .form-group
+    = f.label :password, "New password", class: 'col-sm-3 control-label'
+    .col-sm-6
+      = f.password_field :password, class: 'form-control', required: true, autocomplete: "off", autofocus: true
+
+  .form-group
+    = f.label :password_confirmation, "Confirm your new password", class: 'col-sm-3 control-label'
+    .col-sm-6
+      = f.password_field :password_confirmation, class: 'form-control', required: true
+
+
+
+
+  .form-group
+    .col-sm-offset-3.col-sm-9
+      = f.submit t('.submit'), class: 'btn btn-primary'
+
+= render "devise/shared/links"

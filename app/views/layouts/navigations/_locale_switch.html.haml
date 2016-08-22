@@ -1,0 +1,7 @@
+%li.dropdown
+  %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+    = t(".#{I18n.locale}", default: I18n.locale.to_s.humanize)
+    %b.caret
+  %ul.dropdown-menu
+    - (I18n.available_locales.map(&:to_s)-[I18n.locale.to_s]).each do |loc|
+      %li= link_to t(".#{loc}", default: loc.humanize), { locale: loc }, 'data-turbolinks': false

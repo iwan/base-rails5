@@ -1,0 +1,95 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+#
+# https://github.com/svenfuchs/rails-i18n/blob/master/rails/locale/en.yml
+
+en:
+  hello: "Hello world"
+  created_at: Created at
+  updated_at: Updated at
+  destroy_confirm: "Are you sure?"
+
+  commons:
+    empty_list: No record found
+    new_record: New
+
+  layouts:
+    navigations:
+      signed_in:
+        sign_out: Sign out
+      signed_out:
+        sign_in: Sign in
+      locale_switch:
+        en: English
+        it: Italian
+
+
+  helpers:
+    index:
+      page_title: Index
+      h1_title: Index
+      empty_selection: Empty selection
+    show:
+      page_title: "Record #%{id} detail"
+      h1_title_lead: Record detail
+      h1_title: "Record #%{id}"
+      index: Index
+    edit:
+      page_title: "Edit record #%{id}"
+      h1_title: "Edit record #%{id}"
+    links:
+      edit: Edit
+      destroy: Destroy
+      show: Show
+      index: Index
+      destroy_confirm: "The record is going to be deleted. Are you sure?"
+    submit:
+      create: Create
+      update: Update
+      post:
+        create: Add
+    new:
+      page_title: New record
+      h1_title: New record
+    form:
+      new: New
+      cancel: Cancel
+    breadcrumb:
+      index: Index
+      record: "Record #%{id}"
+      edit: Edit
+      new: New
+    new_record: New
+    actions: Actions
+
+
+  date:
+    formats:
+      slashed: "%d/%m/%Y"
+      timed: "%H:%M"
+      long_w_day: "%A, %B %d, %Y"
+    not_defined: Not defined
+  time:
+    formats:
+      timed: "%H:%M"
+
+
+    

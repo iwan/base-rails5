@@ -1,0 +1,95 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+#
+# https://github.com/svenfuchs/rails-i18n/blob/master/rails/locale/en.yml
+
+it:
+  hello: "Cio mondo"
+  created_at: Creato il
+  updated_at: Modificato il
+  destroy_confirm: "Sei sicuro/a?"
+
+  commons:
+    empty_list: Nessun record trovato
+    new_record: Nuovo
+
+  layouts:
+    navigations:
+      signed_in:
+        sign_out: Esci
+      signed_out:
+        sign_in: Accedi
+      locale_switch:
+        en: Inglese
+        it: Italiano
+
+
+  helpers:
+    index:
+      page_title: Elenco
+      h1_title: Elenco
+      empty_selection: Selezione vuota
+    show:
+      page_title: "Dettaglio record #%{id}"
+      h1_title_lead: Dettaglio record
+      h1_title: "Record #%{id}"
+      index: Elenco
+    edit:
+      page_title: "Modifica record #%{id}"
+      h1_title: "Modifica record #%{id}"
+    links:
+      edit: Modifica
+      destroy: Elimina
+      show: Dettaglio
+      index: Elenco
+      destroy_confirm: "Il record sta per essere eliminato. Vuoi procedere?"
+    submit:
+      create: Crea
+      update: Modifica
+      post:
+        create: Aggiungi
+    new:
+      page_title: Nuovo record
+      h1_title: Nuovo record
+    form:
+      new: Nuovo
+      cancel: Annulla
+    breadcrumb:
+      index: Elenco
+      record: "Record #%{id}"
+      edit: Modifica
+      new: Nuovo
+    new_record: Nuovo
+    actions: Azioni
+
+
+  date:
+    formats:
+      slashed: "%d/%m/%Y"
+      timed: "%H:%M"
+      long_w_day: "%A, %B %d, %Y"
+    not_defined: Non definito
+  time:
+    formats:
+      timed: "%H:%M"
+
+
+    

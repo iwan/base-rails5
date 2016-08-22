@@ -8,15 +8,15 @@
     %meta{:content => Rails.configuration.head_meta_author, :name => "author"}/
     = favicon_link_tag 'favicon.ico'
     %title= content_for?(:title) ? yield(:title) : Rails.configuration.default_title
-    = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
-    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = stylesheet_link_tag "application", media: "all", 'data-turbolinks-track': 'reload'
+    = javascript_include_tag "application", 'data-turbolinks-track': 'reload'
     = csrf_meta_tags
 
   %body{:role => "document", :'data-controller' => "#{controller.controller_path}", :'data-action' => "#{controller.action_name}"}
-    = try_render('layouts/navigation', 'layouts/sancho/navigation')
+    = render 'layouts/navigation'
     .container.theme-showcase{:role => "main"}
-      = try_render('layouts/messages', 'layouts/sancho/messages')
+      = render 'layouts/messages'
       = yield
-      = try_render('layouts/footer', 'layouts/sancho/footer')
+      = render 'layouts/footer'
     .body-bottom
     

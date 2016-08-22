@@ -1,0 +1,12 @@
+- content_for :title do
+  = t('.page_title', default: t('helpers.edit.page_title', id: @user.id).humanize)
+
+%ol.breadcrumb
+  %li= link_to t('users.breadcrumb.index', default: t('helpers.breadcrumb.index')), users_path
+  %li= link_to t('users.breadcrumb.edit.detail', id: @user.id, default: t('helpers.breadcrumb.record', id: @user.id)), @user
+  %li.active= t('users.breadcrumb.edit.title', default: t('helpers.breadcrumb.edit'))
+
+.page-header
+  %h1= t('.h1_title', id: @user.id, default: t('helpers.edit.h1_title', id: @user.id).humanize)
+  
+= render partial: "form", locals: { on_edit: true }
