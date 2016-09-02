@@ -1,0 +1,76 @@
+it:
+  users:
+    attributes:
+      first_name: Nome
+      last_name: Cognome
+      email: Email
+      notes: Note
+      locale: Locale
+ 
+
+    controller:
+      create: L'utente è stato creato correttamente
+      update: L'utente è stato aggiornato con successo
+      destroy: L'utente è stato distrutto con successo
+      destroy_warning:
+        email_different: "L'email inserita è differente da quella utilizzata per l'accesso [%{email}]"
+
+    index:
+      page_title: Elenco di utenti
+      h1_title: Elenco di utenti
+      new: Nuovo utente
+      no_book: Nessun utente trovato
+
+    show:
+      page_title: "Utente #%{id} dettaglio"
+      h1_title_lead: Dettagli dell'utente
+      h1_title: "Utente #%{id}"
+      index_button: Elenco di utenti
+      first_name: Nome
+      last_name: Cognome
+      email: Email
+      notes: Note
+      locale: Locale
+      destroy_button: Elimina
+
+    edit:
+      page_title: "Modifica utente #%{id}"
+      breadcrumb_title: "Utente #%{id}"
+      h1_title: "Modifica utente #%{id}"
+
+    new:
+      page_title: "Nuovo utente"
+      h1_title: "Nuovo utente"
+
+    destroy_warning:
+      h1_title: Cancella il tuo account
+      text: |
+        Al fine di procedere e cancellare il tuo account occorre inserire l'indirizzo email utilizzato per l'accesso:
+      destroy_button: Cancellami
+      cancel_button: Annulla
+
+    breadcrumb:
+      index: Elenco di utenti
+      edit:
+        detail: "Utente #%{id}"
+        title: Modifica
+      new:
+        title: Nuovo
+      destroy:
+        user_detail: "Utente #%{id}"
+        warning: Cancella account
+
+    form:
+      save: Salva
+      cancel: Annulla
+
+
+# --- Form labels:
+  helpers:
+    label:
+      user:
+        first_name: Nome
+        last_name: Cognome
+        email: Email
+        notes: Note
+        locale: Locale

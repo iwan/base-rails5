@@ -34,7 +34,8 @@ ready = ->
     add_sign_for_required_field(this)
 
 
-  $("#sign_in_navbar_button").click ->
+
+  $(".turbolinks_visit").click ->
     Turbolinks.visit($(this).data('href'))
 
 

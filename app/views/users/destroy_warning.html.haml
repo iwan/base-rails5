@@ -1,0 +1,24 @@
+- content_for :title do
+  = t('.h1_title')
+
+%ol.breadcrumb
+  %li= link_to t('users.breadcrumb.index', default: t('helpers.breadcrumb.index')), users_path
+  %li= link_to t('users.breadcrumb.destroy.user_detail', id: @user.id), @user
+  %li.active= t('users.breadcrumb.destroy.warning')
+
+
+.jumbotron
+  %h1= t('.h1_title')
+  %p= t('.text')
+  %p
+    = form_for @user, method: :delete, html: {class: 'form-horizontal', role: 'form'} do |f|
+      = error_notification(@user) if @user.errors.any?
+      .form-group
+        = f.label :email, t('.email', default: t("users.attributes.email")), class: 'col-sm-3 control-label'
+        .col-sm-6
+          = f.text_field :email, class: 'form-control', value: '', required: true
+
+      .form-group
+        .col-sm-offset-3.col-sm-9
+          = f.submit t('.destroy_button'), class: 'btn btn-danger btn-lg'
+          = link_to t('.cancel_button'), @user, class: 'btn btn-default btn-lg'

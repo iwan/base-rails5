@@ -5,12 +5,16 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # cancancan controller
-  # load_resource except: [:index, :create]
-  # authorize_resource
+  load_resource except: :create
+  authorize_resource
 
   # GET /users
   def index
-    @users = User.all
+  end
+
+  # GET /users/1/destroy_warning
+  def destroy_warning
+    
   end
 
   # GET /users/1
@@ -48,8 +52,12 @@ class UsersController < ApplicationController
 
   # DELETE /users/1
   def destroy
-    @user.destroy
-    redirect_to users_url, notice: I18n.t('users.controller.destroy', default: 'User was successfully destroyed.')
+    if params[:user][:email]==current_user.email
+      @user.destroy
+      redirect_to home_path, notice: I18n.t('users.controller.destroy', default: 'User was successfully destroyed.')
+    else
+      redirect_to destroy_warning_user_path(@user), alert: I18n.t('users.controller.destroy_warning.email_different', email: @user.email)
+    end
   end
 
   private
@@ -60,6 +68,10 @@ class UsersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :email, :notes)
+      if current_user.admin?
+        params.require(:user).permit(:first_name, :last_name, :email, :notes, :role)
+      else
+        params.require(:user).permit(:first_name, :last_name, :email, :notes)
+      end
     end
 end

@@ -1,0 +1,1 @@
+this.BaseRails5 ?= {}

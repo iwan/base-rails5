@@ -1,5 +1,5 @@
 - content_for :title do
-  = t('.page_title', default: t('helpers.show.page_title', id: @user.id).humanize)
+  = t('.page_title', id: @user.id, default: t('helpers.show.page_title', id: @user.id)).humanize
 
 %ol.breadcrumb
   %li= link_to t('users.breadcrumb.index', default: t('helpers.breadcrumb.index')), users_path
@@ -9,7 +9,7 @@
   %p.lead= t('.h1_title_lead', default: t('helpers.show.h1_title_lead').humanize)
   %p.pull-right
     = link_to_edit(@user, edit_user_path(@user), button: :norm, glyphicon: "edit")
-    = link_to_destroy(@user, user_path(@user), button: :norm, glyphicon: "remove-sign")
+    = link_to content_tag(:span, nil, class: "glyphicon glyphicon-remove-sign")+" "+t('.destroy_button'), destroy_warning_user_path(@user), class: "btn btn-danger"
   %h1= t('.h1_title', id: @user.id, default: t('helpers.show.h1_title', id: @user.id))
 
 .row.record-detail

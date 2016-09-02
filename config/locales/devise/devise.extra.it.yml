@@ -23,7 +23,9 @@ it:
         confirm_new_password: Conferma la nuova password
         new_password: Nuova password
       new:
-        forgot_your_password: Password dimenticata?
+        title: Password dimenticata?
+        forgot_your_pwd: Password dimenticata?
+        submit: Inviami le istruzioni per resettare la password
         send_me_reset_password_instructions: Inviami le istruzioni per resettare la password
     registrations:
       cancel_account: 
@@ -43,15 +45,21 @@ it:
       new:
         sign_up: Registrati
         sign_in: Accedi
+        sign_up_button: Registrati
+        email: Email
+        password: Password
+        password_confirmation: Ridigita la password
+        title: Registrati
+        password_strength: Robustezza della password
     shared:
       links:
         back: Indietro
         didn_t_receive_confirmation_instructions: Non hai ricevuto le istruzioni per la conferma?
         didn_t_receive_unlock_instructions: Non hai ricevuto le istruzioni per lo sblocco?
         forgot_your_password: Password dimenticata?
-        sign_in: Accedi
+        sign_in: Hai già un account? Accedi
         sign_in_with_provider: Accedi con %{provider}
-        sign_up: Registrati
+        sign_up: Non hai ancora un account? Registrati ora
     unlocks:
       new:
         resend_unlock_instructions: Invia di nuovo le istruzioni per lo sblocco

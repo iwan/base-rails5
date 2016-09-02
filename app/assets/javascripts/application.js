@@ -16,4 +16,29 @@
 //= require bootstrap-sprockets
 //= require bootstrap-datepicker
 
+//= require base_rails5
+
 //= require base
+//= require accounts
+//= require users
+
+
+(function($, undefined) {
+  $(function() {
+    var $body = $("body")
+    var controller = $body.data("controller").replace(/\//g, "_");
+    var action = $body.data("action");
+
+    var activeController = BaseRails5[controller];
+
+    if (activeController !== undefined) {
+      if ($.isFunction(activeController.init)) {
+        activeController.init();
+      }
+
+      if ($.isFunction(activeController[action])) {
+        activeController[action]();
+      }
+    }
+  });
+})(jQuery);

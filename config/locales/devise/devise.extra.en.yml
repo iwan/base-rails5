@@ -23,7 +23,9 @@ en:
         confirm_new_password: Confirm new password
         new_password: New password
       new:
-        forgot_your_password: Forgotten password?
+        title: Forgotten password?
+        forgot_your_pwd: Forgotten password?
+        submit: Send me reset password instructions
         send_me_reset_password_instructions: Send me reset password instructions
     registrations:
       cancel_account: 
@@ -43,15 +45,21 @@ en:
       new:
         sign_up: Sign up
         sign_in: Sign in
+        sign_up_button: Register now
+        email: Email
+        password: Password
+        password_confirmation: Password confirmation
+        title: Register
+        password_strength: Password strength
     shared:
       links:
         back: Back
         didn_t_receive_confirmation_instructions: Didn't receive confirmation instructions?
         didn_t_receive_unlock_instructions: Didn't receive unlock instructions?
         forgot_your_password: Forgot your password?
-        sign_in: Sign in
+        sign_in: Already have an account? Sign in
         sign_in_with_provider: Sign in with %{provider}
-        sign_up: Sign up
+        sign_up: Don't have an account? Sign up now
     unlocks:
       new:
         resend_unlock_instructions: Resend unlock instructions

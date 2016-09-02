@@ -2,7 +2,12 @@ class Account < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :invitable, :database_authenticatable,
-         :recoverable, :rememberable, :trackable, :validatable # :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
+         
+  if Rails.configuration.allow_registration
+    devise :registerable
+  end
+   
 
   belongs_to :user
 
@@ -11,8 +16,17 @@ class Account < ApplicationRecord
   end
   alias_method :username, :name
 
-  before_save do
-    self.email = user.email
+  before_save do |account|
+    if account.user
+      account.email = user.email
+    else
+      puts "-----"
+      user = User.create(email: account.email)
+      puts user.inspect
+      puts user.errors.full_messages
+      account.user = user
+    end
+    
   end
 
 end

@@ -10,6 +10,8 @@
     %title= content_for?(:title) ? yield(:title) : Rails.configuration.default_title
     = stylesheet_link_tag "application", media: "all", 'data-turbolinks-track': 'reload'
     = javascript_include_tag "application", 'data-turbolinks-track': 'reload'
+    - if controller.action_name=="new" and (controller.controller_path=="devise_invitable/registrations" or controller.controller_path=="registrations")
+      = javascript_include_tag "password_score", 'data-turbolinks-track': 'reload'
     = csrf_meta_tags
 
   %body{:role => "document", :'data-controller' => "#{controller.controller_path}", :'data-action' => "#{controller.action_name}"}
@@ -19,4 +21,5 @@
       = yield
       = render 'layouts/footer'
     .body-bottom
+    = "[#{controller.controller_path}]/[#{controller.action_name}]"
     

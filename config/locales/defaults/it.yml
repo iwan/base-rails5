@@ -37,6 +37,7 @@ it:
         sign_out: Esci
       signed_out:
         sign_in: Accedi
+        sign_up: Registrati
       locale_switch:
         en: Inglese
         it: Italiano

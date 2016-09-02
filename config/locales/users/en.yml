@@ -1,0 +1,76 @@
+en:
+  users:
+    attributes:
+      first_name: First name
+      last_name: Last name
+      email: Email
+      notes: Notes
+      locale: Locale
+ 
+
+    controller:
+      create: User was successfully created
+      update: User was successfully updated
+      destroy: User was successfully destroyed
+      destroy_warning:
+        email_different: "The email you entered is different from your login email [%{email}]"
+
+    index:
+      page_title: Listing users
+      h1_title: Listing users
+      new: New user
+      no_book: No user found
+
+    show:
+      page_title: "User #%{id} detail"
+      h1_title_lead: User detail
+      h1_title: "User #%{id}"
+      index_button: Listing users
+      first_name: First name
+      last_name: Last name
+      email: Email
+      notes: Notes
+      locale: Locale
+      destroy_button: Destroy
+
+    edit:
+      page_title: "Edit user #%{id}"
+      breadcrumb_title: "User #%{id}"
+      h1_title: "Edit user #%{id}"
+
+    new:
+      page_title: "New user"
+      h1_title: "New user"
+
+    destroy_warning:
+      h1_title: Delete your account
+      text: |
+        In order to proceed and permanently delete your account you have to enter your login email: 
+      destroy_button: Delete my account
+      cancel_button: Cancel
+
+    breadcrumb:
+      index: Listing users
+      edit:
+        detail: "User #%{id}"
+        title: Edit
+      new:
+        title: New
+      destroy:
+        user_detail: "User #%{id} detail"
+        warning: Destroy account
+
+    form:
+      save: Save
+      cancel: Cancel
+
+
+# --- Form labels:
+  helpers:
+    label:
+      user:
+        first_name: First name
+        last_name: Last name
+        email: Email
+        notes: Notes
+        locale: Locale

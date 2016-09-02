@@ -25,10 +25,10 @@
   = render "layouts/navigations/locale_switch"
   %li
     .btn-group.navbar-btn
-      %button.btn.btn-danger= current_user.first_name
+      %button.btn.btn-danger= current_user.first_name.blank? ? current_user.full_name : current_user.first_name
       %button.btn.btn-danger.dropdown-toggle{data:{toggle:"dropdown"}}
         %span.caret
       %ul.dropdown-menu
-        %li= link_to current_account.user.full_name, current_account.user
+        %li= link_to current_user.full_name, current_account.user
         %li.divider
         %li= link_to t('.sign_out'), destroy_account_session_path, method: :delete
