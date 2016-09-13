@@ -25,18 +25,12 @@
     %tbody
     - @users.each do |user|
       %tr
-  
-        %td= link_to user.first_name, user
-            
+        %td= link_to user.first_name, user   
         %td= user.last_name
-            
         %td= user.email
-            
         %td= user.notes
-            
-        
         %td.right
           = link_to_show(user, user_path(user))
           = link_to_edit(user, edit_user_path(user))
-          = link_to_destroy(user, user_path(user))
+          = link_to_destroy(user, user_path(user)) if current_user.admin?
 
