@@ -25,6 +25,10 @@ class ApplicationController < ActionController::Base
     redirect_to access_denied_url #, alert: exception.message
   end
 
+  rescue_from ActiveRecord::RecordNotFound do |exception|
+    redirect_to record_not_found_url #, alert: exception.message
+  end
+
 
   def set_locale
     loc = params[:locale]

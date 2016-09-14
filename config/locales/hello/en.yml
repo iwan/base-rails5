@@ -1,6 +1,18 @@
 en:
   home:
+    index:
+      title: Welcome
+      text: This is the welcome page
+      sign_in: Sign in
+      sign_up: Register
+    dashboard:
+      title: Dashboard
+      text: This is the dashboard page
     access_denied:
       title: Forbidden
       text: You are not authorized to access this page
+      back: Back
+    record_not_found:
+      title: Not found
+      text: The requested resource could not be found
       back: Back

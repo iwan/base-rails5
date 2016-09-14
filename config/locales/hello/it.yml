@@ -1,6 +1,18 @@
 it:
   home:
+    index:
+      title: Benvenuta/o
+      text: Questa è la pagina di benvenuto
+      sign_in: Accedi
+      sign_up: Registrati
+    dashboard:
+      title: Pannello
+      text: Questa è la pagina interna
     access_denied:
       title: Accesso negato
       text: Non sei autorizzato ad accedere questa pagina
+      back: Indietro
+    record_not_found:
+      title: Risorsa non trovata
+      text: La risorsa richiesta non è stata trovata
       back: Indietro
