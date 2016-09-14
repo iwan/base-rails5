@@ -21,6 +21,11 @@ class ApplicationController < ActionController::Base
     I18n.default_locale
   end
 
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to access_denied_url #, alert: exception.message
+  end
+
+
   def set_locale
     loc = params[:locale]
     loc = nil if !I18n.available_locales.map(&:to_s).include?(loc)

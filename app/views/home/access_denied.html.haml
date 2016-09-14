@@ -1,0 +1,11 @@
+- content_for :title do
+  = t('.title')
+
+.jumbotron
+  %h1(style='color: #666;')
+    = "403 " 
+    %span(style='color: #ccc;')= "//"
+    = t('.title')
+  %p= t('.text')
+  %p
+    = link_to t('.back'), :back, class: 'btn btn-default btn-lg'

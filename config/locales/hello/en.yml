@@ -1,0 +1,6 @@
+en:
+  home:
+    access_denied:
+      title: Forbidden
+      text: You are not authorized to access this page
+      back: Back

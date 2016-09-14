@@ -1,0 +1,6 @@
+it:
+  home:
+    access_denied:
+      title: Accesso negato
+      text: Non sei autorizzato ad accedere questa pagina
+      back: Indietro

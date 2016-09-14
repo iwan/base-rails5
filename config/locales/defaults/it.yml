@@ -22,7 +22,7 @@
 # https://github.com/svenfuchs/rails-i18n/blob/master/rails/locale/en.yml
 
 it:
-  hello: "Cio mondo"
+  hello: "Ciao mondo"
   created_at: Creato il
   updated_at: Modificato il
   destroy_confirm: "Sei sicuro/a?"

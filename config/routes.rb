@@ -16,5 +16,6 @@ Rails.application.routes.draw do
   # get 'home/index'
   get '/home/index', to: 'home#index', as: 'home'        # default page for not-logged users
   get '/home/index', to: 'home#index', as: 'dashboard'   # default page logged users
+  get '/home/access_denied', to: 'home#access_denied', as: 'access_denied'   # default page logged users
   root to: "home#index"
 end
