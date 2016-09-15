@@ -2,7 +2,7 @@
   = render "layouts/navigations/locale_switch"
   %li
     %button.btn.btn-primary.navbar-btn.turbolinks_visit(data-href=new_account_session_path)= t('.sign_in')
-  - if Rails.configuration.allow_registration
+  - if ENV["registerable"]=="true"
     %li
       %button.btn.btn-info.navbar-btn.turbolinks_visit(data-href=new_account_registration_path)= t('.sign_up')
 

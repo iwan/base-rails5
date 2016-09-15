@@ -25,7 +25,11 @@
       
         %dt= t('.email', default: t("users.attributes.email"))
         %dd= @user.email
-      
+
+        - if can? :show_roles, current_user
+          %dt= t('.role', default: t("users.attributes.role"))
+          %dd= t("users.attributes.roles.#{@user.role}")
+
         %dt= t('.notes', default: t("users.attributes.notes"))
         %dd= @user.notes
 

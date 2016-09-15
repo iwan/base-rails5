@@ -66,5 +66,5 @@ gem 'devise'
 gem 'cancancan'
 gem 'devise_invitable'        # https://github.com/scambra/devise_invitable
 gem 'rails-i18n', '~> 5.0.0' # For 5.0.x
-
-
+gem 'font-awesome-rails'
+gem 'figaro' # https://github.com/laserlemon/figaro

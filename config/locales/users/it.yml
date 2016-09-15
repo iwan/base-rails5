@@ -6,7 +6,11 @@ it:
       email: Email
       notes: Note
       locale: Locale
- 
+      role: Ruolo
+      roles:
+        admin: Amministratore
+        basic: Basic
+
 
     controller:
       create: L'utente è stato creato correttamente
@@ -20,6 +24,7 @@ it:
       h1_title: Elenco di utenti
       new: Nuovo utente
       no_book: Nessun utente trovato
+      has_account: Ha un account
 
     show:
       page_title: "Utente #%{id} dettaglio"

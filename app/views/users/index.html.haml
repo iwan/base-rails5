@@ -19,6 +19,9 @@
         %th= t '.first_name', default: t("users.attributes.first_name")
         %th= t '.last_name', default: t("users.attributes.last_name")
         %th= t '.email', default: t("users.attributes.email")
+        - if current_user.admin?
+          %th= t '.role', default: t("users.attributes.role")
+          %th= t '.has_account'
         %th= t '.notes', default: t("users.attributes.notes")
         %th.right=t '.actions', default: t("helpers.actions")
 
@@ -28,7 +31,10 @@
         %td= link_to user.first_name, user   
         %td= user.last_name
         %td= user.email
-        %td= user.notes
+        - if can? :show_roles, current_user
+          %td= t("users.attributes.roles.#{user.role}")
+          %td= bool_to_icon !user.account.nil?
+        %td= truncate user.notes, length: 30
         %td.right
           = link_to_show(user, user_path(user))
           = link_to_edit(user, edit_user_path(user))

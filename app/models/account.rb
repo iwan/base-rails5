@@ -4,10 +4,8 @@ class Account < ApplicationRecord
   devise :invitable, :database_authenticatable,
          :recoverable, :rememberable, :trackable, :validatable
          
-  if Rails.configuration.allow_registration
-    devise :registerable
-  end
-   
+  devise :registerable if ENV["registerable"]=="true"
+     
 
   belongs_to :user
 

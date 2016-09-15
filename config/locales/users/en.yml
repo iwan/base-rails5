@@ -6,6 +6,10 @@ en:
       email: Email
       notes: Notes
       locale: Locale
+      role: Role
+      roles:
+        admin: Admin
+        basic: Basic
  
 
     controller:
@@ -20,6 +24,7 @@ en:
       h1_title: Listing users
       new: New user
       no_book: No user found
+      has_account: Has account
 
     show:
       page_title: "User #%{id} detail"
