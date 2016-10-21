@@ -80,7 +80,7 @@ test:
 #
 production:
   <<: *default
-  adapter: <% ENV['DB_ADAPTER'] || 'postgresql' %>
+  adapter: <%= ENV['DB_ADAPTER'] || 'postgresql' %>
   host: <%= ENV['DB_HOST'] || 'localhost' %>
   database: <%= ENV['DB_NAME'] %>
   username: <%= ENV['DB_USER'] %>
