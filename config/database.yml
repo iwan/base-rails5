@@ -81,6 +81,7 @@ test:
 production:
   <<: *default
   adapter: <% ENV['DB_ADAPTER'] || 'postgresql' %>
-  database: base-rails5_production
-  username: base-rails5
-  password: <%= ENV['BASE-RAILS5_DATABASE_PASSWORD'] %>
+  host: <%= ENV['DB_HOST'] || 'localhost' %>
+  database: <%= ENV['DB_NAME'] %>
+  username: <%= ENV['DB_USER'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
