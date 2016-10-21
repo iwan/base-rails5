@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/mnoack/nulldb.git
+  remote: https://github.com/mnoack/nulldb.git
   revision: aa36e3c934d3619c6d57169dad5c04aa278d7549
   ref: aa36e3c
   specs:

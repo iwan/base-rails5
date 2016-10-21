@@ -72,5 +72,5 @@ gem 'figaro' # https://github.com/laserlemon/figaro
 
 
 # gem 'activerecord-nulldb-adapter', group: :production
-gem 'activerecord-nulldb-adapter', github: 'mnoack/nulldb', ref: 'aa36e3c', group: :production # hotfix for https://github.com/nulldb/nulldb/issues/69
+gem 'activerecord-nulldb-adapter', git: 'https://github.com/mnoack/nulldb.git', ref: 'aa36e3c', group: :production # hotfix for https://github.com/nulldb/nulldb/issues/69
 
