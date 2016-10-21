@@ -71,6 +71,6 @@ gem 'font-awesome-rails'
 gem 'figaro' # https://github.com/laserlemon/figaro
 
 
-gem 'activerecord-nulldb-adapter', group: :production
-
+# gem 'activerecord-nulldb-adapter', group: :production
+gem 'activerecord-nulldb-adapter', github: 'mnoack/nulldb', ref: 'aa36e3c', group: :production # hotfix for https://github.com/nulldb/nulldb/issues/69
 
