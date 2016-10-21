@@ -8,6 +8,7 @@ RUN apk --update add --virtual build-dependencies \
                                postgresql-dev \
                                nodejs \
                                tzdata \
+                               git \
                                && rm -rf /var/cache/apk/*
 
 RUN mkdir /usr/src/app
