@@ -4,18 +4,15 @@ build:
     - gem update bundler
     - bundle install --path vendor/bundle
     - bundle exec rake db:create db:schema:load
-    - bundle exec rake test
+    - bin/rspec
 
   environment:
     RACK_ENV: test
     RAILS_ENV: test
     SECRET_KEY_BASE: kSJDNksjdgnkSNDMsFDAD
+    TEST_DB_USER: postgres
 
 compose:
   database:
     image: postgres:9.5.1
-  # redis:
-  #   image: redis:3.0.7
-  # elasticsearch:
-  #   image: elasticsearch:2.2.0
 
