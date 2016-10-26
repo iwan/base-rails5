@@ -16,3 +16,30 @@ compose:
   database:
     image: postgres:9.5.1
 
+
+cache:
+  mount:
+    - vendor/bundle
+    - .git
+
+publish:
+  docker:
+    username: iwan
+    password: $$DOCKER_HUB_PASSWORD
+    email: iwan.buetti@mail.com
+    repo: iwan/base-rails5
+    tag: latest
+    when:
+      branch: master
+
+deploy:
+  rancher:
+    url: http://139.162.165.207:8080/v1/projects/1a5
+    access_key: 2F68113FD435DFA8BF95
+    secret_key: TxgCeTNnjJDYpBb5JgqcZW8C2FPDUAxqqv6Hycdu
+    service: base-rails5/web2
+    docker_image: iwan/base-rails5
+    when:
+      branch: master
+
+
