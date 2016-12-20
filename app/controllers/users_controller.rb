@@ -2,7 +2,6 @@
 
 class UsersController < ApplicationController
   before_action :authenticate_account!
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # cancancan controller
   load_resource except: :create
@@ -44,7 +43,7 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   def update
     if @user.update(user_params)
-      redirect_to @user, notice: I18n.t('users.controller.update', default: 'User was successfully updated.')
+      redirect_to dashboard_path, notice: I18n.t('users.controller.update', default: 'User was successfully updated.')
     else
       render :edit
     end
@@ -62,9 +61,9 @@ class UsersController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_user
-      @user = User.find(params[:id])
-    end
+    # def set_user
+    #   @user = User.find(params[:id])
+    # end
 
     # Only allow a trusted parameter "white list" through.
     def user_params

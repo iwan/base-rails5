@@ -39,7 +39,7 @@ it:
         sign_in: Accedi
         sign_up: Registrati
       locale_switch:
-        en: Inglese
+        en: English
         it: Italiano
 
 

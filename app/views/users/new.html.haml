@@ -2,7 +2,8 @@
   = t('.page_title', default: t('helpers.new.page_title').humanize)
 
 %ol.breadcrumb
-  %li= link_to t('users.breadcrumb.index', default: t('helpers.breadcrumb.index')), users_path
+  - if can? :index, User
+    %li= link_to t('users.breadcrumb.index', default: t('helpers.breadcrumb.index')), users_path
   %li.active= t('users.breadcrumb.new.title', default: t('helpers.breadcrumb.new'))
 
 .page-header

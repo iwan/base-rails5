@@ -1,8 +1,7 @@
 %ul.nav.navbar-nav.navbar-right
   = render "layouts/navigations/locale_switch"
   %li
-    %button.btn.btn-primary.navbar-btn.turbolinks_visit(data-href=new_account_session_path)= t('.sign_in')
-  - if ENV["registerable"]=="true"
-    %li
+    - if ENV["registerable"]=="true" && current_page?(controller: 'devise/sessions', action: 'new')
       %button.btn.btn-info.navbar-btn.turbolinks_visit(data-href=new_account_registration_path)= t('.sign_up')
-
+    - else
+      %button.btn.btn-primary.navbar-btn.turbolinks_visit(data-href=new_account_session_path)= t('.sign_in')

@@ -1,5 +1,3 @@
-
-
 = form_for @user, html: {class: 'form-horizontal', role: 'form'} do |f|
   = error_notification(@user) if @user.errors.any?
 
@@ -36,4 +34,5 @@
   .form-group
     .col-sm-offset-3.col-sm-9
       = f.submit nil, class: 'btn btn-primary'
-      = link_to_back button: :norm, label: t(".cancel", default: t("helpers.form.cancel"))
+      = link_to t(".cancel", default: t("helpers.form.cancel")), dashboard_path, class: "btn btn-default"
+      

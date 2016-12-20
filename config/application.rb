@@ -24,8 +24,18 @@ module BaseRails5
 
     config.time_zone = 'Rome'
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
-    config.i18n.available_locales = [:en, 'it']
+    config.i18n.available_locales = [:en, :it]
     config.i18n.default_locale = :en
 
+
+    config.action_mailer.smtp_settings = { 
+      address: ENV["smtp_address"],
+      user_name: ENV["smtp_username"],
+      password: ENV["smtp_password"],
+      authentication: ENV["smtp_authentication"],
+      enable_starttls_auto: true,
+      port: ENV["smtp_port"].to_i
+      # :domain => "bananair.com",
+    }
   end
 end

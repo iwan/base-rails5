@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id         :integer          not null, primary key
+#  first_name :string
+#  last_name  :string
+#  email      :string
+#  notes      :text
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  locale     :string(2)        default("en")
+#  role       :integer          default("basic")
+#
+
 class User < ApplicationRecord
   enum role: [ :admin, :basic ]
   

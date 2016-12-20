@@ -26,6 +26,10 @@ ActiveRecord::Schema.define(version: 20160901090946) do
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string   "unconfirmed_email"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "invitation_token"
@@ -43,15 +47,6 @@ ActiveRecord::Schema.define(version: 20160901090946) do
     t.index ["invited_by_id"], name: "index_accounts_on_invited_by_id", using: :btree
     t.index ["reset_password_token"], name: "index_accounts_on_reset_password_token", unique: true, using: :btree
     t.index ["user_id"], name: "index_accounts_on_user_id", using: :btree
-  end
-
-  create_table "books", force: :cascade do |t|
-    t.string   "title"
-    t.integer  "year"
-    t.date     "date"
-    t.boolean  "sold_out"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

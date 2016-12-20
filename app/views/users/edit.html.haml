@@ -2,7 +2,8 @@
   = t('.page_title', id: @user.id, default: t('helpers.edit.page_title', id: @user.id).humanize)
 
 %ol.breadcrumb
-  %li= link_to t('users.breadcrumb.index', default: t('helpers.breadcrumb.index')), users_path
+  - if can? :index, User
+    %li= link_to t('users.breadcrumb.index', default: t('helpers.breadcrumb.index')), users_path
   %li= link_to t('users.breadcrumb.edit.detail', id: @user.id, default: t('helpers.breadcrumb.record', id: @user.id)), @user
   %li.active= t('users.breadcrumb.edit.title', default: t('helpers.breadcrumb.edit'))
 

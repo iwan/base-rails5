@@ -7,8 +7,9 @@ class ApplicationController < ActionController::Base
     @current_ability ||= Ability.new(current_account)
   end
 
-  def after_sign_in_path_for(user)
-    stored_location_for(resource) || root_url
+  def after_sign_in_path_for(account)
+    # stored_location_for(account) || dashboard_path
+    dashboard_path
   end
 
   def current_user

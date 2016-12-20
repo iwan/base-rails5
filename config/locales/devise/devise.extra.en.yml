@@ -3,6 +3,8 @@ en:
     confirmations:
       new:
         resend_confirmation_instructions: Resend confirmation instructions
+        title: Resend confirmation instructions
+        submit: Send
     mailer:
       confirmation_instructions:
         subject: Confirmation instructions
@@ -60,6 +62,7 @@ en:
         sign_in: Already have an account? Sign in
         sign_in_with_provider: Sign in with %{provider}
         sign_up: Don't have an account? Sign up now
+        conf_instr: Resend confirmation
     unlocks:
       new:
         resend_unlock_instructions: Resend unlock instructions

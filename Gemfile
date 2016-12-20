@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.0'
+gem 'rails', '~> 5.0'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
 # Use Puma as the app server
@@ -36,11 +36,16 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   # gem 'quiet_assets'  # hide logs of assets
   gem 'factory_girl_rails'
-  gem "capybara"
   gem 'faker' # https://github.com/stympy/faker
   gem 'annotate'#, '~> 2.6.6'
   gem 'guard-rspec'
+  # gem 'shoulda-matchers', '~> 3.0', require: false
   gem "database_cleaner"
+  gem 'climate_control'
+end
+
+group :test do
+  gem "capybara"
 end
 
 gem 'listen', '~> 3.0.5' # this gem must not be in the :development group

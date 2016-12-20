@@ -3,6 +3,8 @@ it:
     confirmations:
       new:
         resend_confirmation_instructions: Invia di nuovo le istruzioni per la conferma
+        title: Invia le istruzioni per la conferma
+        submit: Spedisci
     mailer:
       confirmation_instructions:
         subject: Istruzioni per la conferma
@@ -60,6 +62,7 @@ it:
         sign_in: Hai già un account? Accedi
         sign_in_with_provider: Accedi con %{provider}
         sign_up: Non hai ancora un account? Registrati ora
+        conf_instr: Rispedisci conferma
     unlocks:
       new:
         resend_unlock_instructions: Invia di nuovo le istruzioni per lo sblocco
