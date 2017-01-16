@@ -16,3 +16,16 @@ it:
       title: Risorsa non trovata
       text: La risorsa richiesta non è stata trovata
       back: Indietro
+
+  activerecord:
+    attributes:
+      account:
+        tos_and_pp: Le condizioni generali e le norme sulla privacy
+    errors:
+      models:
+        account:
+          attributes:
+            tos_and_pp:
+              accepted: devono essere accettate
+
+

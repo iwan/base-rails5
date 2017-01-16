@@ -16,3 +16,14 @@ en:
       title: Not found
       text: The requested resource could not be found
       back: Back
+
+  activerecord:
+    attributes:
+      account:
+        tos_and_pp: Terms of Service and Privacy Policy
+    errors:
+      models:
+        account:
+          attributes:
+            tos_and_pp:
+              accepted: should be accepted
