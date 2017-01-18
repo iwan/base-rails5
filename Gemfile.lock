@@ -1,4 +1,13 @@
 GIT
+  remote: git://github.com/svenfuchs/rails-i18n.git
+  revision: ef06b48ec66b2f11e8de3e5e3123ad05a75a7fae
+  branch: master
+  specs:
+    rails-i18n (5.0.2)
+      i18n (~> 0.7)
+      railties (~> 5.0)
+
+GIT
   remote: https://github.com/mnoack/nulldb.git
   revision: aa36e3c934d3619c6d57169dad5c04aa278d7549
   ref: aa36e3c
@@ -81,6 +90,7 @@ GEM
       execjs
     coffee-script-source (1.11.1)
     concurrent-ruby (1.0.2)
+    connection_pool (2.2.1)
     database_cleaner (1.5.3)
     debug_inspector (0.0.2)
     devise (4.2.0)
@@ -179,6 +189,8 @@ GEM
     public_suffix (2.0.4)
     puma (3.6.2)
     rack (2.0.1)
+    rack-protection (1.5.3)
+      rack
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (5.0.0.1)
@@ -198,9 +210,6 @@ GEM
       nokogiri (~> 1.6.0)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
-    rails-i18n (5.0.1)
-      i18n (~> 0.7)
-      railties (~> 5.0)
     railties (5.0.0.1)
       actionpack (= 5.0.0.1)
       activesupport (= 5.0.0.1)
@@ -211,6 +220,7 @@ GEM
     rb-fsevent (0.9.8)
     rb-inotify (0.9.7)
       ffi (>= 0.5.0)
+    redis (3.3.2)
     responders (2.3.0)
       railties (>= 4.2.0, < 5.1)
     rspec (3.5.0)
@@ -245,6 +255,11 @@ GEM
       tilt (>= 1.1, < 3)
     sexp_processor (4.7.0)
     shellany (0.0.1)
+    sidekiq (4.2.8)
+      concurrent-ruby (~> 1.0)
+      connection_pool (~> 2.2, >= 2.2.0)
+      rack-protection (>= 1.5.0)
+      redis (~> 3.2, >= 3.2.1)
     slop (3.6.0)
     spring (2.0.0)
       activesupport (>= 4.2)
@@ -311,9 +326,10 @@ DEPENDENCIES
   pg (~> 0.18)
   puma (~> 3.0)
   rails (~> 5.0)
-  rails-i18n (~> 5.0.0)
+  rails-i18n!
   rspec-rails (~> 3.5)
   sass-rails (~> 5.0)
+  sidekiq
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)

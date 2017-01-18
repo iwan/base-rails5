@@ -71,11 +71,14 @@ gem 'bootstrap-datepicker-rails'
 gem 'devise'
 gem 'cancancan'
 gem 'devise_invitable'        # https://github.com/scambra/devise_invitable
-gem 'rails-i18n', '~> 5.0.0' # For 5.0.x
+# gem 'rails-i18n', '~> 5.0.0' # For 5.0.x
+gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'master' # For 5.x
+
 gem 'font-awesome-rails'
 gem 'figaro' # https://github.com/laserlemon/figaro
 
 
 # gem 'activerecord-nulldb-adapter', group: :production
 gem 'activerecord-nulldb-adapter', git: 'https://github.com/mnoack/nulldb.git', ref: 'aa36e3c', group: :production # hotfix for https://github.com/nulldb/nulldb/issues/69
+gem 'sidekiq'
 

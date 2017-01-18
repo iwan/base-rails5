@@ -27,15 +27,14 @@ module BaseRails5
     config.i18n.available_locales = [:en, :it]
     config.i18n.default_locale = :en
 
-
+    config.action_mailer.delivery_method = :smtp
     config.action_mailer.smtp_settings = { 
-      address: ENV["smtp_address"],
-      user_name: ENV["smtp_username"],
-      password: ENV["smtp_password"],
-      authentication: ENV["smtp_authentication"],
+      address:              ENV["smtp_address"],
+      user_name:            ENV["smtp_username"],
+      password:             ENV["smtp_password"],
+      authentication:       ENV["smtp_authentication"],
       enable_starttls_auto: true,
-      port: ENV["smtp_port"].to_i
-      # :domain => "bananair.com",
+      port:                 ENV["smtp_port"].to_i
     }
   end
 end

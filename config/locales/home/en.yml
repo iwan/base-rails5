@@ -26,4 +26,4 @@ en:
         account:
           attributes:
             tos_and_pp:
-              accepted: should be accepted
+              accepted: must be accepted
