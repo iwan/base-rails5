@@ -54,7 +54,7 @@ en:
         email: Email
         password: Password
         password_confirmation: Password confirmation
-        title: Register
+        title: Sign up
         password_strength: Password strength
         tos_and_pp: "I accept %{tos} and %{pp}"
         tos: Terms of Service

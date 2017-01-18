@@ -13,7 +13,7 @@ module MyDeviseHelper
     if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'
       arr << link_to(t('.forgot_your_password'), new_password_path(resource_name), class: link_classes)
     end
-    if devise_mapping.confirmable? && controller_name != 'confirmations'
+    if devise_mapping.confirmable? && controller_name != 'confirmations' && controller_name != 'registrations'
       arr << link_to(t('.conf_instr'), new_confirmation_path(resource_name), class: link_classes)
     end
     if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks'
