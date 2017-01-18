@@ -13,4 +13,10 @@ class HomeController < ApplicationController
   def record_not_found
     
   end
+
+  def privacy_policy    
+  end
+
+  def terms_of_service    
+  end
 end

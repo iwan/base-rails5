@@ -7,6 +7,9 @@ it:
         submit: Spedisci
     mailer:
       confirmation_instructions:
+        welcome: Benvenuto/a
+        msg: Conferma la tua registrazione
+        confirm: Conferma
         subject: Istruzioni per la conferma
       reset_password_instructions:
         action: Cambia la mia password
@@ -53,6 +56,9 @@ it:
         password_confirmation: Ridigita la password
         title: Registrati
         password_strength: Robustezza della password
+        tos_and_pp: "Accetto le %{tos} e le %{pp}"
+        tos: Condizioni generali
+        pp: Norme sulla privacy
     shared:
       links:
         back: Indietro

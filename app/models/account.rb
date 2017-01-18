@@ -36,6 +36,9 @@ class Account < ApplicationRecord
   devise :confirmable if ENV["confirmable"]=="true"
   belongs_to :user
 
+  attr_accessor :tos_and_pp
+  validates_acceptance_of :tos_and_pp, allow_nil: false
+
   def name
     (user && user.full_name) || email
   end
@@ -47,8 +50,11 @@ class Account < ApplicationRecord
     else
       user = User.create(email: account.email)
       account.user = user
-    end
-    
+    end    
+  end
+
+  def send_devise_notification(notification, *args)
+    devise_mailer.send(notification, self, *args).deliver_later
   end
 
 end

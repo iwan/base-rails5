@@ -3,6 +3,10 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
   helper_method :current_user
 
+  before_action :configure_permitted_parameters, if: :devise_controller?
+
+
+
   def current_ability
     @current_ability ||= Ability.new(current_account)
   end
@@ -31,6 +35,12 @@ class ApplicationController < ActionController::Base
   end
 
 
+  protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:tos_and_pp])
+  end
+  
   def set_locale
     loc = params[:locale]
     loc = nil if !I18n.available_locales.map(&:to_s).include?(loc)
@@ -39,7 +49,7 @@ class ApplicationController < ActionController::Base
         current_user.update_attribute(:locale, loc)
         I18n.locale = loc || I18n.default_locale
       else
-        I18n.locale = loc || current_user_locale || I18n.default_locale
+        I18n.locale = loc || session[:locale] || current_user_locale || I18n.default_locale
       end
     else
       # user not logged in

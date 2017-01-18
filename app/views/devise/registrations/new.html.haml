@@ -20,12 +20,20 @@
 
   .form-group
     %label.control-label.col-sm-3= t('.password_strength')
-    .col-sm-6#progress-bar-container
+    .col-sm-3#progress-bar-container
 
   .form-group
     = f.label :password_confirmation, t('.password_confirmation'), class: 'col-sm-3 control-label'
     .col-sm-6
       = f.password_field :password_confirmation, class: 'form-control', required: true
+
+
+  .form-group
+    .col-sm-offset-3.col-sm-6
+      .checkbox
+        %label
+          = f.check_box :tos_and_pp, required: true
+          = t('.tos_and_pp', tos: link_to(t('.tos'), terms_of_service_path, target: '_blank'), pp: link_to(t('.pp'), privacy_policy_path, target: '_blank')).html_safe
 
 
   .form-group

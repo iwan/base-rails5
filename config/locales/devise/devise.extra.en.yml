@@ -7,6 +7,9 @@ en:
         submit: Send
     mailer:
       confirmation_instructions:
+        welcome: Welcome
+        msg: Please confirm your email
+        confirm: Confirm
         subject: Confirmation instructions
       reset_password_instructions:
         action: Change password
@@ -53,6 +56,9 @@ en:
         password_confirmation: Password confirmation
         title: Register
         password_strength: Password strength
+        tos_and_pp: "I accept %{tos} and %{pp}"
+        tos: Terms of Service
+        pp: Privacy Policy
     shared:
       links:
         back: Back
