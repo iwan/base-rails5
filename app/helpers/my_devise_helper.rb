@@ -25,8 +25,8 @@ module MyDeviseHelper
       end
     end
 
-    content_tag(:span) do
-      arr.join("   ::   ").html_safe
+    content_tag(:span, class: 'devise-shared-links') do
+      arr.join(content_tag(:span, "::", class: 'sep')).html_safe
     end
   end
 
