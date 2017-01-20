@@ -4,14 +4,21 @@ Rails.application.routes.draw do
       get :destroy_warning
     end
   end
+  devise_for :accounts
+
 
     
 
-  devise_for :accounts, controllers: { registrations: "registrations" } do
-    get '/accounts/sign_out' => 'devise/sessions#destroy'
-  end
-  
+  # devise_for :accounts, controllers: { registrations: "registrations" } do
+  #   get '/accounts/sign_out' => 'devise/sessions#destroy'
+  #   get '/accounts' => 'registrations#new'
+  # end
+
+
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  # get '/accounts/', to: 'devise/registrations#new'
+
 
   # get 'home/index'
   get '/index', to: 'home#index', as: 'home'                # default page for not-logged users
