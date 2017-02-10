@@ -37,24 +37,19 @@ class Account < ApplicationRecord
   belongs_to :user
 
   attr_accessor :tos_and_pp
-  validates_acceptance_of :tos_and_pp, allow_nil: false
+  validates_acceptance_of :tos_and_pp, allow_nil: false, on: :create
 
   def name
     (user && user.full_name) || email
   end
   alias_method :username, :name
 
-  before_save do |account|
-    if account.user
-      account.email = user.email
-    else
-      user = User.create(email: account.email)
-      account.user = user
-    end    
+  before_create do |a|
+    user = User.create(email: a.email)
+    a.user = user
   end
 
   def send_devise_notification(notification, *args)
     devise_mailer.send(notification, self, *args).deliver_later
   end
-
 end

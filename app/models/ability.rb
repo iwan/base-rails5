@@ -10,7 +10,7 @@ class Ability
       can :manage, :all
       can :show_roles, User if user.admin?
     else
-      can [:show, :update, :destroy, :destroy_warning], User, :id => user.id # index disabled
+      can [:show, :update, :destroy, :destroy_warning], User, id: user.id # index disabled
       
     end
 

@@ -16,6 +16,9 @@ RSpec.describe HomeController, type: :controller do
     end
 
     it "returns http success when authenticated" do
+      @request.env["devise.mapping"] = Devise.mappings[:admin]
+      sign_in FactoryGirl.create(:account)
+
       get :dashboard
       expect(response).to have_http_status(:success)
     end
@@ -31,6 +34,21 @@ RSpec.describe HomeController, type: :controller do
   describe "GET #record_not_found" do
     it "returns http success" do
       get :record_not_found
+      expect(response).to have_http_status(:success)
+    end
+  end
+
+
+  describe "GET #privacy_policy" do
+    it "returns http success" do
+      get :privacy_policy
+      expect(response).to have_http_status(:success)
+    end
+  end
+
+  describe "GET #terms_of_service" do
+    it "returns http success" do
+      get :terms_of_service
       expect(response).to have_http_status(:success)
     end
   end

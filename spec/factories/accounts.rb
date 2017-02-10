@@ -28,6 +28,12 @@
 
 FactoryGirl.define do
   factory :account do
-    
+    pwd = Faker::Internet.password(8)
+    email { Faker::Internet.email }
+    password { pwd }
+    password_confirmation { pwd }
+    tos_and_pp true
+    confirmed_at Date.today
   end
+
 end

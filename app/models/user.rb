@@ -13,6 +13,7 @@
 #  role       :integer          default("basic")
 #
 
+
 class User < ApplicationRecord
   enum role: [ :admin, :basic ]
   
@@ -29,13 +30,16 @@ class User < ApplicationRecord
   alias_attribute :lastname, :last_name
 
   validates :email, presence: true
-  # validates :email, :first_name, :last_name, presence: true
   validates :email, uniqueness: true
-  validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
+  validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
   has_one :account, dependent: :destroy
 
-  after_save do
-    account.update_attribute(:email, email) if account
+  after_save do |u|
+    u = u.reload
+    a = u.account
+    if a && u.email!=a.email
+      a.update_without_password(email: u.email)
+    end
   end
 
 end

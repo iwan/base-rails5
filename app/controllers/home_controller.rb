@@ -11,7 +11,6 @@ class HomeController < ApplicationController
   end
 
   def record_not_found
-    
   end
 
   def privacy_policy    

@@ -13,7 +13,6 @@ class UsersController < ApplicationController
 
   # GET /users/1/destroy_warning
   def destroy_warning
-    
   end
 
   # GET /users/1
@@ -51,7 +50,7 @@ class UsersController < ApplicationController
 
   # DELETE /users/1
   def destroy
-    if params[:user][:email]==current_user.email
+    if params[:user] && params[:user][:email]==current_user.email
       @user.destroy
       redirect_to home_path, notice: I18n.t('users.controller.destroy', default: 'User was successfully destroyed.')
     else
